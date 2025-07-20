@@ -1,7 +1,7 @@
 def daily_reminder():
     # Prompt for a single task
-    task = input("Please enter your task description: ")
-    priority = input("Enter the priority level (high, medium, low): ").lower()
+    task = input("Finish project report: ")
+    priority = input("(high, medium, low): ").lower()
     time_bound = input("Is this task time-bound? (yes or no): ").lower()
 
     # Initialize the reminder message
