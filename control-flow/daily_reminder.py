@@ -1,26 +1,27 @@
-def daily_reminder():
-    # Prompt for a single task
-    task = input("Finish your project report: ")
+while True:
     priority = input("Priority (high/medium/low): ").lower()
+    if priority in ['high', 'medium', 'low']:
+        break
+    print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
+
+# Validate time-bound
+while True:
     time_bound = input("Is it time-bound? (yes/no): ").lower()
+    if time_bound in ['yes', 'no']:
+        break
+    print("Invalid response. Please enter 'yes' or 'no'.")
 
-    # Initialize the reminder message
-    reminder_message = f"'{task}' is a {priority} priority task"
+# Build base message based on priority
+match priority:
+    case "high":
+        reminder_message = f"'{task}' is a high priority task that requires immediate attention today!"
+    case "medium":
+        reminder_message = f"'{task}' is a medium priority task. Consider completing it soon."
+    case "low":
+        reminder_message = f"'{task}' is a low priority task. Consider completing it when you have free time."
 
-    # Process the task based on priority using Match Case
-    match priority:
-        case "high":
-            reminder_message += " Please finishthe project report!"
-        case "medium":
-            reminder_message += ". Consider completing it soon."
-        case "low":
-            reminder_message += ". Consider completing it when you have free time."
-        case _:
-            reminder_message = "Invalid priority level specified."
+# Override if time-bound is yes
+if time_bound == 'yes':
+    reminder_message = f"'{task}' is a {priority} priority task that requires immediate attention today!"
 
-    # Modify the reminder if the task is time-bound
-    if time_bound == "yes" and priority in ["high", "medium", "low"]:
-        reminder_message = f"'{task}' is a {priority} priority task that requires immediate attention today!"
-
-    # Print the customized reminder
-    print("Please finish the project report")
+print("Reminder:", reminder_message)
