@@ -1,6 +1,6 @@
 def daily_reminder():
     # Get task input
-    task = input("Enter your task: ")
+    task = input("Finish your project: ")
 
     # Validate priority with loop
     while True:
