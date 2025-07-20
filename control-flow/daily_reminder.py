@@ -1,6 +1,6 @@
 def daily_reminder():
     # Prompt for a single task
-    task = input("Enter your task: ")
+    task = input("Finish your project report: ")
     priority = input("Priority (high/medium/low): ").lower()
     time_bound = input("Is it time-bound? (yes/no): ").lower()
 
@@ -10,7 +10,7 @@ def daily_reminder():
     # Process the task based on priority using Match Case
     match priority:
         case "high":
-            reminder_message += " that requires immediate attention today!"
+            reminder_message += " Please finishthe project report!"
         case "medium":
             reminder_message += ". Consider completing it soon."
         case "low":
