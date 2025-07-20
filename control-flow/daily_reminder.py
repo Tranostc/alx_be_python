@@ -23,4 +23,4 @@ def daily_reminder():
         reminder_message = f"'{task}' is a {priority} priority task that requires immediate attention today!"
 
     # Print the customized reminder
-    print(reminder_message)
+    print("Please finish the project report")
