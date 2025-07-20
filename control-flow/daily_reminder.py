@@ -1,27 +1,35 @@
-while True:
-    priority = input("Priority (high/medium/low): ").lower()
-    if priority in ['high', 'medium', 'low']:
-        break
-    print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
+def daily_reminder():
+    # Get task input
+    task = input("Enter your task: ")
 
-# Validate time-bound
-while True:
-    time_bound = input("Is it time-bound? (yes/no): ").lower()
-    if time_bound in ['yes', 'no']:
-        break
-    print("Invalid response. Please enter 'yes' or 'no'.")
+    # Validate priority with loop
+    while True:
+        priority = input("Priority (high/medium/low): ").lower()
+        if priority in {"high", "medium", "low"}:
+            break
+        print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
 
-# Build base message based on priority
-match priority:
-    case "high":
-        reminder_message = f"'{task}' is a high priority task that requires immediate attention today!"
-    case "medium":
-        reminder_message = f"'{task}' is a medium priority task. Consider completing it soon."
-    case "low":
-        reminder_message = f"'{task}' is a low priority task. Consider completing it when you have free time."
+    # Validate time-bound status with loop
+    while True:
+        time_bound = input("Is it time-bound? (yes/no): ").lower()
+        if time_bound in {"yes", "no"}:
+            break
+        print("Invalid response. Please enter 'yes' or 'no'.")
 
-# Override if time-bound is yes
-if time_bound == 'yes':
-    reminder_message = f"'{task}' is a {priority} priority task that requires immediate attention today!"
+    # Base message template
+    reminder = f"'{task}' is a {priority} priority task"
 
-print("Reminder:", reminder_message)
+    # Time sensitivity check
+    if time_bound == "yes":
+        reminder += " that requires immediate attention today!"
+    else:
+        # Priority-based suggestions
+        match priority:
+            case "high":
+                reminder += ". Complete this first in your schedule"
+            case "medium":
+                reminder += ". Address this after urgent tasks"
+            case "low":
+                reminder += ". Consider this during downtime"
+
+    print(f"\nReminder: {reminder}")
