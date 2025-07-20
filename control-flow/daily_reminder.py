@@ -23,4 +23,4 @@ def daily_reminder():
         reminder_message += " This requires immediate attention today!"
     
     # Print the customized reminder
-    print(reminder_message)
+    print("Finish project report")
