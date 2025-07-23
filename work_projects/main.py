@@ -1,6 +1,4 @@
-name = "grace"
-def greet():
-    print(f"Hello, {name}!")  
-    
-    if __name__ == "__main__":
-        greet()   
+# This is my main Python script for the project
+def main():
+    print("Hello, World!")
+    # Add more functionality here
